@@ -1,0 +1,103 @@
+@import "../../../../styles/colors.module.scss";
+
+.imgPresentation {
+  width: 34.375rem;
+}
+
+.subTitle {
+  font-size: 1.125rem;
+  font-weight: bold;
+  color: $lightRed;
+}
+
+.title{
+  font-size: 2.5rem;
+  font-weight: bold;
+  line-height: 3.125rem;
+}
+
+.description {
+  font-size: 1.25rem;
+  color: $lightGray;
+  margin: 1.25rem 0 2.5rem 0;
+}
+
+
+.btnCta {
+  font-weight: bold;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 1.5625rem;
+  padding: .875rem 1.875rem;
+  border: 2px solid $lightRed;
+
+  .btnText{
+    text-decoration: none;
+  }
+
+  .btnImg{
+    width: .6875rem;
+  }
+
+  &:hover{
+    border-color: $darkRed;
+    color: $lightGray;
+    background-color: transparent;
+  }
+}
+
+.arrowDown{
+  width: 1.875rem;
+  cursor: pointer;
+}
+
+@media (max-width: 1199px) and (min-width: 991px) {
+  .title{
+    font-size: 1.25rem;
+    line-height: 1.875rem;
+  }
+
+  .description{
+    font-size: .875rem;
+  }
+}
+
+@media (max-width: 991px){
+  .imgPresentation{
+    display: flex;
+    margin: 3.125rem auto;
+  }
+}
+@media (max-width: 590px){
+  .imgPresentation{
+    width: 95%;
+  }
+
+  .title{
+    font-size: 1.625rem;
+    line-height: 2.125rem;
+  }
+
+  .description{
+    font-size: .875rem;
+  }
+
+  .btnCta{
+    padding: .625rem 1.5rem;
+  }
+}
+
+@media (max-width: 359px) {
+  .subTitle{
+    font-size: .875rem;
+  }
+
+  .title{
+    font-size: 1.25rem;
+  }
+
+  .description{
+    font-size: .75rem;
+  }
+}
