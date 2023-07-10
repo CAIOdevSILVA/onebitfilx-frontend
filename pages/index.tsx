@@ -7,6 +7,9 @@ import SlideSection from "@/src/components/homeNoAuth/slideSection";
 import { GetStaticProps } from "next";
 import courseService, { CourseType } from "@/src/services/courseService";
 import Footer from "@/src/components/common/footer";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 interface indexPageProps {
   children ?: React.ReactNode;
@@ -14,6 +17,11 @@ interface indexPageProps {
 }
 
 const HomeNoAuth = ({ course }: indexPageProps) => {
+
+  useEffect(() => {
+    AOS.init();
+  }, [])
+
   return (
     <>
       <Head>
@@ -24,12 +32,20 @@ const HomeNoAuth = ({ course }: indexPageProps) => {
           forma simples e fácil!"/>
       </Head>
       <main>
-        <div className={styles.sectionBackground}>
+        <div 
+          className={styles.sectionBackground} 
+          data-aos= "fade-zoom-in"
+          data-aos-duration = "1600"
+        >
           <HeaderNoAuth/>
           <PresentationSection />
         </div>
-        <CardSection />
-        <SlideSection newestCourses={course} />
+        <div data-aos = "fade-right" data-aos-duration = "1200" >
+          <CardSection />
+        </div>
+        <div  data-aos = "fade-up" data-aos-duration = "1300">
+          <SlideSection newestCourses={course}/>
+        </div>
         <Footer />
       </main>
     </>
