@@ -11,7 +11,7 @@ import styles from "../styles/registerLogin.module.scss";
 import ToastComponent from "@/src/components/common/toast";
 
 
-const register = () => {
+const Register = () => {
   const [isToastOpen, setToastIsOpen] = useState(false);
   const [ToastMessage, setToastMessage] = useState('');
   const router = useRouter();
@@ -190,4 +190,4 @@ const register = () => {
   )
 }
 
-export default register
+export default Register
