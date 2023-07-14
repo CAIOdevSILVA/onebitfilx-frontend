@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import HeaderGeneric from "@/src/components/common/headerGeneric";
 import Head from "next/head";
 import { Form, FormGroup, Label, Input, Container, Button } from "reactstrap"
@@ -15,6 +15,13 @@ const Register = () => {
   const [isToastOpen, setToastIsOpen] = useState(false);
   const [ToastMessage, setToastMessage] = useState('');
   const router = useRouter();
+
+  useEffect(() => {
+    if(sessionStorage.getItem("onebitflix-token")){
+      router.push("/home")
+    }
+  }, [])
+
   const handleRegister = async(event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 

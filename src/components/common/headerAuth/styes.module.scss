@@ -1,0 +1,98 @@
+@import "../../../../styles//colors.module.scss";
+
+.nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 1.5rem .875rem;
+}
+
+.imgLogoNav{
+  width: 10rem;
+  cursor: pointer;
+}
+
+.seachImg{
+  width: 1.625rem;
+  margin: 0 .625rem;
+  cursor: pointer;
+}
+
+.userProfile{
+  font-weight: bold;
+  font-size: 1.5rem;
+  background-color: white;
+  color: #000;
+  text-transform: uppercase;
+  min-width: 2.8125rem;
+  min-height: 2.8125rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin: 0 .875rem;
+}
+
+.input{
+  background-color: transparent;
+  color: white;
+  border-color: $lightGray;
+
+  &:focus{
+    background-color: transparent;
+    color: white;
+    border-color: $mediumGray;
+    box-shadow: none;
+  }
+
+  &::placeholder{
+    color: white;
+  }
+}
+
+.modal{
+  position: absolute;
+  width: 9.375rem;
+  height: 5rem;
+  top: 5.3125rem;
+  right: 10%;
+  background-color: #303030;
+  outline: none;
+  border-radius: .3125rem;
+  box-shadow: 8px 6px 4px rgba(0, 0, 0, .486);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 1.5rem;
+}
+
+.overlayModal{
+  position: fixed;
+  inset: 0;
+  background-color: transparent;
+}
+
+.modalLink{
+  color: white;
+  margin: 5px 0;
+  font-weight: bold;
+  cursor: pointer;
+  transition: .4s;
+
+  &:hover{
+    color: $lightRed;
+  }
+}
+
+@media(max-width: 527px){
+  .nav{
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .modal{
+    top: 8.75rem;
+  }
+}
