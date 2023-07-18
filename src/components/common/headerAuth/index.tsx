@@ -28,7 +28,7 @@ const HeaderAuth = () => {
   return (
     <>
       <Container className={styles.nav}>
-        <Link href={"/home"}>
+        <Link href={"/home"} style={{textDecoration: "none"}}>
           <img src="/logoOnebitflix.svg" alt="Logo Onebitflix" className={styles.imgLogoNav}/>
         </Link>
         <div className="d-flex align-items-center">
@@ -57,7 +57,7 @@ const HeaderAuth = () => {
           className={styles.modal}
           overlayClassName={styles.overlayModal}
         >
-          <Link href={"/profile"}>
+          <Link href={"/profile"} style={{textDecoration: "none"}}>
             <p className={styles.modalLink}>Meus Dados</p>
           </Link>
           <p className={styles.modalLink} onClick={handleLogout}>Sair</p>
