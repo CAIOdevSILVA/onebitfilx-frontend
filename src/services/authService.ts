@@ -32,7 +32,7 @@ const authService = {
       }
     });
 
-    if(res.status === 200){
+    if(res?.status === 200){
       sessionStorage.setItem("onebitflix-token", res.data.token)
     };
 
