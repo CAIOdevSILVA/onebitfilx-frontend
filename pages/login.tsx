@@ -41,9 +41,9 @@ const Login = () => {
     const password = formData.get("password")!.toString();
     const params = { email, password };
 
-    const { status } = await authService.login(params);
+    const res = await authService.login(params);
 
-    if(status === 200){
+    if(res?.status === 200){
       router.push("/home");
     }else{
       setToastColor("bg-danger")
