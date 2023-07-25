@@ -1,6 +1,7 @@
 import useSWR from "swr";
 import courseService from "@/src/services/courseService";
 import SlideComponent from "../../common/slideComponent";
+import PageSpinner from "../../common/spinner";
 
 import styles from "../../../../styles/slideCategory.module.scss"
 
@@ -14,7 +15,7 @@ const NewestCategory = () => {
   if(!data) {
     return ( 
       <>
-        <p>Loading...</p>
+        <PageSpinner />
       </>
     )
   }

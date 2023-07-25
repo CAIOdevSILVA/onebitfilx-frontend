@@ -1,6 +1,7 @@
 import categoryService from '@/src/services/categoriesServices';
 import useSWR from 'swr';
 import SlideComponent from '../../common/slideComponent';
+import PageSpinner from '../../common/spinner';
 
 import styles from "../../../../styles/slideCategory.module.scss";
 
@@ -21,7 +22,7 @@ const ListCategoriesSlides = ({ categoryId, categoryName }:props) => {
   if(!data) {
     return ( 
       <>
-        <p>Loading...</p>
+        < PageSpinner/>
       </>
     )
   }

@@ -3,6 +3,7 @@ import courseService from "@/src/services/courseService";
 
 import styles from "../../../../styles/slideCategory.module.scss";
 import SlideComponent from "../../common/slideComponent";
+import PageSpinner from "../../common/spinner";
 
 
 const FeaturedCategory = () => {
@@ -15,7 +16,7 @@ const FeaturedCategory = () => {
   if(!data) {
     return ( 
       <>
-        <p>Loading...</p>
+        <PageSpinner />
       </>
     )
   }

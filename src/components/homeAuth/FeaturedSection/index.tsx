@@ -1,9 +1,11 @@
-import styles from "./styles.module.scss"
 import useSWR from "swr";
 import courseService, { CourseType } from "@/src/services/courseService";
 import HeaderAuth from "../../common/headerAuth";
 import { Button, Container } from "reactstrap";
 import Link from "next/link";
+import PageSpinner from "../../common/spinner";
+
+import styles from "./styles.module.scss"
 
 const FeaturedSection = () => {
   const { data, error } = useSWR("/featured", courseService.getFeaturedCourses)
@@ -15,7 +17,7 @@ const FeaturedSection = () => {
   if(!data) {
     return ( 
       <>
-        <p>Loading...</p>
+        <PageSpinner />
       </>
     )
   }
