@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState, FormEvent } from "react"
 import { Container, Form, Input } from "reactstrap"
 import Modal from "react-modal"
 import Link from "next/link"
@@ -7,12 +7,26 @@ import styles from "./styes.module.scss"
 import { useRouter } from "next/router"
 import profileService from "@/src/services/profileService"
 
+
 Modal.setAppElement("#__next")
 
 const HeaderAuth = () => {
   const router = useRouter()
   const [modalOpen, setModalOpen] = useState(false);
   const [initials, setInitials] = useState("");
+  const [searchName, setSearchName] = useState("");
+
+  const handleSearch = async(event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    
+    router.push(`search?name=${searchName}`);
+    setSearchName("");
+  }
+
+  const handleSearchClick = () => {
+    router.push(`search?name=${searchName}`);
+    setSearchName("");
+  }
 
   useEffect(() => {
     profileService.fetchCurrent().then((user) => {
@@ -35,6 +49,7 @@ const HeaderAuth = () => {
     router.push("/")
   }
 
+ 
   return (
     <>
       <Container className={styles.nav}>
@@ -42,18 +57,23 @@ const HeaderAuth = () => {
           <img src="/logoOnebitflix.svg" alt="Logo Onebitflix" className={styles.imgLogoNav}/>
         </Link>
         <div className="d-flex align-items-center">
-          <Form>
+          <Form onSubmit={handleSearch}>
             <Input
               name="search"
               type="search"
               placeholder="Pesquisar"
               className={styles.input}
+              value={searchName}
+              onChange={(event) => {
+                setSearchName(event.currentTarget.value.toLowerCase());
+              }}
             />
           </Form>
           <img 
             src="/homeAuth/iconSearch.svg" 
             alt="lupaHeader" 
             className={styles.seachImg}
+            onClick={handleSearchClick}
           />
           <p 
             className={styles.userProfile}
