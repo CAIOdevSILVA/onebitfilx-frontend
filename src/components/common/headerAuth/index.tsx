@@ -16,8 +16,8 @@ const HeaderAuth = () => {
 
   useEffect(() => {
     profileService.fetchCurrent().then((user) => {
-      const firstNameInitial = user.firstName.slice(0 ,1);
-      const lastNameInitial = user.lastName.slice(0 ,1);
+      const firstNameInitial = user.firstName?.slice(0 ,1);
+      const lastNameInitial = user.lastName?.slice(0 ,1);
       setInitials(`${firstNameInitial}${lastNameInitial}`)
     })
   }, [])
