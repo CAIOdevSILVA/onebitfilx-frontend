@@ -1,1 +1,21 @@
 @import "./colors.module.scss";
+
+.noSearchResult{
+  text-align: center;
+  padding: 1.25rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.headerFooterBg{
+  background-color: black;
+}
+
+.main{
+  display: flex;
+  flex-direction: column;
+}
+
+.searchResult{
+  flex: 1 0 auto;
+}
