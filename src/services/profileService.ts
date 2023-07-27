@@ -23,7 +23,6 @@ const profileService = {
     }).catch((error) => {
       return error.response;
     });
-    console.log(res.data)
     return res.data;
   },
   userUpdate: async(params: UserParams) => {

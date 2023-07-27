@@ -1,1 +1,99 @@
 @import "./colors.module.scss";
+
+.courseInfo {
+  margin-top:  -7.5rem;
+}
+
+.courseTitle{
+  font-size: 2.5rem;
+  font-weight: bold;
+  padding: 1.5625rem;
+  width: 43.75rem;
+}
+
+.courseDescription {
+  width: 40.625rem;
+  padding-bottom: 1.5625rem;
+  color: $lightGray;
+}
+
+.courseBtn{
+  display: flex;
+  align-items: center;
+  gap: .9375rem;
+  font-weight: bold;
+  font-size: .875rem;
+  padding: .625rem 2.1875rem;
+  color: white;
+  border-color: $lightRed;
+
+  &:hover{
+    border-color: $darkRed;
+    color: $lightGray;
+    background-color: transparent;
+  }
+}
+
+.buttonImg {
+  width: .625rem;
+  margin: 0;
+  padding: 0;
+}
+
+.interactions {
+  display: flex;
+  gap: 1.25rem;
+  margin: 1.25rem 0;
+}
+
+.interactionImage {
+  width: 2.25rem;
+  cursor: pointer;
+}
+
+.episodeInfo{
+  padding: 3.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.episodeDivision {
+  font-weight: bold;
+  border-bottom: 1px solid $lightRed;
+  padding: .1875rem .875rem;
+  margin-bottom: .625rem;
+}
+
+.episodeLength {
+  color: $lightGray;
+  margin-bottom: 2.5rem;
+}
+
+@media (max-width: 767px) {
+  .courseTitle {
+    font-size: 1.625rem;
+    width: 99%;
+  }
+
+  .courseDescription{
+    width: 95%;
+  }
+}
+
+@media (max-width: 400px) {
+  .courseInfo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .courseTitle{
+    font-size: 1.375rem;
+  }
+
+  .courseDescription {
+    font-size: .875rem;
+  }
+}
