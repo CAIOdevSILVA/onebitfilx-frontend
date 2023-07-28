@@ -2,7 +2,6 @@ import Head from "next/head";
 import HeaderAuth from "@/src/components/common/headerAuth";
 import courseService, { CourseType } from "@/src/services/courseService";
 import PageSpinner from "@/src/components/common/spinner";
-import Link from "next/link";
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
@@ -135,9 +134,9 @@ const CoursePage = () => {
             <strong>Não temos episodios ainda, volte outra hora! &#x1f606;&#x1f918;</strong>
           ) : (
             course?.episodes?.map((episode) => (
-              <Link key={episode.id} href={`/episodes`} style={{ textDecoration: "none" }}>
-                <EpisodeList episode={episode}/>
-              </Link>
+              < >
+                <EpisodeList episode={episode} course={course}/>
+              </>
             ))
           )}
         </Container>

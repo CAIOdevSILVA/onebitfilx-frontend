@@ -1,0 +1,71 @@
+@import "./colors.module.scss";
+
+.episodeTitle {
+  font-size: 2.25rem;
+  font-weight: bold;
+}
+
+.episodesButtonDiv {
+  display: flex;
+  gap: 1.5625rem;
+  margin-top: 1.875rem;
+}
+
+.episodesButton{
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  cursor: pointer;
+  transition: .4s;
+  width: 1.125rem;
+
+  &:hover {
+    border: none;
+    background-color: transparent;
+  }
+
+  &:disabled {
+    border: none;
+    padding: 0;
+    background-color: transparent;
+  }
+
+  &:active {
+    outline: none;
+    box-shadow: none;
+    border: none;
+  }
+  
+  &:focus {
+    outline: none;
+    box-shadow: none;
+    border: none;
+    background-color: transparent;
+  }
+}
+
+.arrowImg {
+  width: 100%;
+  object-fit: cover;
+  transition: .4s;
+  cursor: pointer;
+  // &:hover {
+
+  // }
+}
+
+.player{
+  max-width: 100%;
+}
+
+@media(max-width: 425px){
+  .episodeTitle{ 
+    font-size: 20px;
+    padding: 0 .625rem;
+    word-wrap: break-word;
+  }
+
+  .player {
+    margin-top: -3.75rem;
+  }
+}
